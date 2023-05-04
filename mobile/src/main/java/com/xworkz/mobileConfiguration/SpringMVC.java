@@ -12,26 +12,26 @@ public class SpringMVC extends AbstractAnnotationConfigDispatcherServletInitiali
 
 @Override
 protected Class<?>[] getRootConfigClasses() {
- System.out.println("created getRootConfigClasses ");
+ System.out.println("created getRootConfigClasses");
 	return null;
 }
 
 @Override
 protected Class<?>[] getServletConfigClasses() {
-	 System.out.println("created getServletConfigClasses ");
+	 System.out.println("created getServletConfigClasses");
 
 	return new Class[] {SpringConfiguration.class};
 }
 
 @Override
 protected String[] getServletMappings() {
-	System.out.println("created getServletMappings ");
+	System.out.println("created getServletMappings");
 	return new String[] {"/"};
 }
 
 @Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 	configurer.enable();
-	System.out.println("created configureDefaultServletHandling ");
+	System.out.println("created configureDefaultServletHandling");
 	}
 }

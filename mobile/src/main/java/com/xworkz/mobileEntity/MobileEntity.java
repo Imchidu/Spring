@@ -17,11 +17,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Table(name = "mobiledetails")
 
-@NamedQuery(name ="findByBrand",query = "select entity  from MobileEntity entity where entity.brand=:br")
+@NamedQuery(name ="findByBrand", query = "select entity  from MobileEntity entity where entity.brand=:br")
 public class MobileEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
 	private int id;
 	private String brand;
 	private String color;

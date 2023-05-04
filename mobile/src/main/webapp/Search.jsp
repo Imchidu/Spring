@@ -75,7 +75,7 @@ h1 {
 	<p style="color: yellow;">${message}</p>
 	<p style="color: red;">${error}</p>
 
-	<form action="save" method="get" style="text-align: center;">
+	<form action="save" style="text-align: center;">
 		<pre>
   Brand :  <input type="text" name="brand" value="${entity.brand}"
 				placeholder="brand">

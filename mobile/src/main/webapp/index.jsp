@@ -88,6 +88,10 @@ h1 {
   
   Type:    <input type="text" name="type" value="${entity.type}"
 				placeholder="type">
+				
+				
+				
+				
   
 
   
@@ -100,6 +104,7 @@ h1 {
 
 
 	</form>
+	<a href="Search.jsp">search</a>
 
 	<!-- Optional JavaScript; choose one of the two! -->
 

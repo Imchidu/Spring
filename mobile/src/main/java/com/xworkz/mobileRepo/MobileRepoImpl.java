@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.xworkz.mobileEntity.MobileEntity;
 
+
 @Component
 public class MobileRepoImpl implements MobileRepo {
 
@@ -33,14 +34,12 @@ public class MobileRepoImpl implements MobileRepo {
 		return true;
 	}
 
-	@Override
 	public Optional<List<MobileEntity>> findByBrand(String brand) {
+		System.out.println("find by name method in mobilerepo");
 		 EntityManager creatEntityManager=factory.createEntityManager();
-		try {
-			
-		
+		try {	
 		 Query createNamedQuery = creatEntityManager.createNamedQuery("findByBrand");
-		 Query setParameter = createNamedQuery.setParameter("br", brand);
+		 Query setParameter = createNamedQuery.setParameter("br",brand);
 		 
 		return Optional.ofNullable(createNamedQuery.getResultList());
 		}
@@ -48,5 +47,7 @@ public class MobileRepoImpl implements MobileRepo {
 			creatEntityManager.close();
 		}
 	}
+
+	
 
 }

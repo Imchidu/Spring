@@ -1,4 +1,9 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!doctype html>
+
+
 <html lang="en">
 <head>
 <!-- Required meta tags -->
@@ -70,29 +75,33 @@ h1 {
 	</nav>
 	<h1>Availble Result</h1>
 	<p style="text-align: center; color: green;">${message}</p>
-	<table class="table table-striped table dark">
-		<thead>
-			<tr>
-				<th scope="col" style="color: black; font-size: larger;">Brand</th>
-				<th scope="col" style="color: black; font-size: larger;">Color</th>
-				<th scope="col" style="color: black; font-size: larger;">Price</th>
-				<th scope="col" style="color: black; font-size: larger;">Type</th>
-			</tr>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" style="color: black; font-size: larger;">Brand</th>
+      <th scope="col" style="color: black; font-size: larger;">Color</th>
+      <th scope="col" style="color: black; font-size: larger;">Price</th>
+      <th scope="col" style="color: black; font-size: larger;">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <c:if test="${not empty list}">
+      <c:forEach items="${list}" var="dto">
+        <tr>
+          <td>${dto.brand}</td>
+          <td>${dto.color}</td>
+          <td>${dto.price}</td>
+          <td>${dto.type}</td>
+        </tr>
+      </c:forEach>
 
-		</thead>
-		<c:forEach items="${list }" var="dto">
-			<tr>
-				<td>${dto.brand }</td>
-				<td>${dto.color }</td>
-				<td>${dto.price }</td>
-				<td>${dto.type }</td>
+<tr>
 
-
-			</tr>
-		</c:forEach>
-	</table>
-
-
+        <td colspan="4">No data found.</td>
+      </tr>
+    </c:if>
+  </tbody>
+</table>
 
 	
 	<!-- Optional JavaScript; choose one of the two! -->

@@ -7,6 +7,7 @@ import javax.naming.directory.SearchResult;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,9 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.xworkz.mobileEntity.MobileEntity;
 import com.xworkz.mobileService.MobileService;
-import com.xworkz.mobileService.MobileServiceImpl;
 
-@Component
+@Controller
 @RequestMapping("/save")
 
 public class MobileController {
@@ -49,8 +49,8 @@ public class MobileController {
 		System.out.println("getting the Details from database");
 
 		Optional<List<MobileEntity>> findByBrand = service.findByBrand(brand);
-		if (findByBrand.isPresent() && findByBrand.get().size() > 0) {
-
+		if (findByBrand.isPresent() ) {
+		
 			List<MobileEntity> list = findByBrand.get();
 			System.out.println(list);
 
